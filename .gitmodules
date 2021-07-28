@@ -1,0 +1,4 @@
+[submodule "intero-technologies/intero_cwa"]
+	path = intero-technologies/intero_cwa
+	url = git@github.com:intero-technologies/intero_cwa.git
+	branch = 14.0
