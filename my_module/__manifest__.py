@@ -32,4 +32,7 @@
     'demo': [
         'demo/demo.xml',
     ],
+
+    # mark module as application
+    'application': True
 }
