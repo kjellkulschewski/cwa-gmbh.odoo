@@ -5,14 +5,21 @@ from odoo import models, fields, api
 
 class my_module(models.Model):
     _name = 'my_module.my_module'
-    _description = 'my_module.my_module'
+    _description = 'Test module which contains orders'
 
-    name = fields.Char()
-    value = fields.Integer()
-    value2 = fields.Float(compute="_value_pc", store=True)
+    name = fields.Char(required=True)
+    price = fields.Float(required=True)
+    quantity = fields.Integer(required=True)
+    mwst = fields.Float(compute="_compute_mwst", store=True)
+    total = fields.Float(compute="_compute_total", store=True)
     description = fields.Text()
 
-    @api.depends('value')
-    def _value_pc(self):
+    @api.depends('price')
+    def _compute_mwst(self):
         for record in self:
-            record.value2 = float(record.value) / 100
+            record.mwst = float(record.price) * 0.19
+
+    @api.depends('price', 'mwst', 'quantity')
+    def _compute_total(self):
+        for record in self:
+            record.total = (float(record.price) + float(record.mwst)) * float(record.quantity)

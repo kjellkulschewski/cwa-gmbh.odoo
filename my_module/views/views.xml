@@ -8,8 +8,11 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="price"/>
+          <field name="quantity"/>
+          <field name="mwst"/>
+          <field name="total"/>
+          <field name="description"/>
         </tree>
       </field>
     </record>
@@ -46,14 +49,14 @@
 
     <!-- menu categories -->
 
-    <menuitem name="Menu 1" id="my_module.menu_1" parent="my_module.menu_root"/>
-    <menuitem name="Menu 2" id="my_module.menu_2" parent="my_module.menu_root"/>
+    <menuitem name="Test 1" id="my_module.menu_1" parent="my_module.menu_root"/>
+    <menuitem name="Test 2" id="my_module.menu_2" parent="my_module.menu_root"/>
 
     <!-- actions -->
 
-    <menuitem name="List" id="my_module.menu_1_list" parent="my_module.menu_1"
+    <menuitem name="Order1" id="my_module.menu_1_list" parent="my_module.menu_1"
               action="my_module.action_window"/>
-    <menuitem name="Server to list" id="my_module" parent="my_module.menu_2"
+    <menuitem name="Order2" id="my_module" parent="my_module.menu_2"
               action="my_module.action_server"/>
 
   </data>
