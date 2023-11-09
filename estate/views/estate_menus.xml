@@ -1,5 +1,12 @@
-<menuitem id="test_menu_root" name="Test">
-    <menuitem id="test_first_level_menu" name="First Level">
-        <menuitem id="test_model_menu_action" action="estate_property_action"/>
-    </menuitem>
-</menuitem>
+<odoo>
+    <data>
+
+      <menuitem id="test_menu_root" name="Test">
+        <menuitem id="test_first_level_menu" name="First Level">
+          <menuitem id="test_model_menu_action" action="estate_property_action"/>
+        </menuitem>
+      </menuitem>
+
+    </data>
+</odoo>
+
