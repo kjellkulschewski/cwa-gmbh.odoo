@@ -1,5 +1,11 @@
-{
+{   
     'name': "estate",
-    'depends': ['base'],
+    'depends':['base'],
+    'author': "Darius Dao",
+    'category': "Real Estate/Brokerage",
 
+
+    'data':[
+        'security/security.xml'
+    ]
 }
