@@ -25,5 +25,5 @@ class RecurringPlan(models.Model):
         string='Orientation',
         selection=[('north','North'),('east','East'),('south','South'),('west','West')],
         help="Orientation is the direction from Point A to Point B.However it is always one of the four sides of the Horizon"
-    active = fields.Boolean('Active',readonly=True)
     )
+    active = fields.Boolean('Active',readonly=True)
