@@ -3,7 +3,7 @@
     <record id="estate_group_user" model="res.groups">
         <field name="name">Agent</field>
         <field name="category_id" ref="base.module_category_real_estate_brokerage"/>
-        <field name="comment">This is the user Group and will only have the right to see the software</fields>
+        <field name="comment">This is the user Group and will only have the right to see the software</field>
     </record>
 
     <record id="estate_group_Manager" model="res.groups">
