@@ -7,7 +7,7 @@ from dateutil.relativedelta import relativedelta
 class RecurringPlan(models.Model):
     _name = "estate.property"
     _description = "this is a estate_property example"
-    _order = "sequence"
+
 
     name = fields.Char(required=True)
     description = fields.Text()
