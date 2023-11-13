@@ -9,7 +9,7 @@ class RecurringPlan(models.Model):
     _description = "this is a estate_property example"
 
 
-    name = fields.Char(default="Unknown")
+    name = fields.Char(required=True)
     description = fields.Text()
     postcode = fields.Char(required=True)
     date_availability = fields.Date(copy=False, default=fields.Date.today() + relativedelta(months=3))
@@ -34,4 +34,4 @@ class RecurringPlan(models.Model):
         copy=False,
         default='new'
     )
-    active = fields.Boolean(default=True)
+    active = fields.Boolean(default=False)
