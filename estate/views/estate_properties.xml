@@ -52,6 +52,8 @@
                     <field name="facades"/>
                     <field name="garage"/>
                     <field name="garden"/>
+                    <field name="garden_area" string="Garden Area (sqm)"/>
+                    <field name="total_area" string="Total Area (sqm)"/>
                     <field name="garden_orientation"/>
                   </group>
                 </page>
