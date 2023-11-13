@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+
+      <!-- top menu -->
+
+      <menuitem id="menu_root" name="Real Estate Test123"/>
+
+      <!-- first level menus -->
+
+      <menuitem
+          id="first_level_menu1"
+          name="Advertisements"
+          parent="menu_root"/>
+      <menuitem
+          id="first_level_menu2"
+          name="Settings"
+          parent="menu_root"/>
+
+      <!-- actions -->
+
+      <menuitem
+          id="menu_action1"
+          name="Properties"
+          parent="first_level_menu1"
+          action="estate_property_properties_action"/>
+      <menuitem
+          id="menu_action2"
+          name="Property Types"
+          parent="first_level_menu2"
+          action="estate_property_property_types_action"/>
+      <menuitem
+          id="menu_action3"
+          name="Property Tags"
+          parent="first_level_menu2"
+          action="estate_property_property_tags_action"/>
+
+    </data>
+</odoo>
+
