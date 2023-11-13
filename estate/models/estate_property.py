@@ -9,7 +9,7 @@ class RecurringPlan(models.Model):
     _description = "this is a estate_property example"
 
 
-    name = fields.Char(required=True)
+    name = fields.Char(default="Unknown")
     description = fields.Text()
     postcode = fields.Char(required=True)
     date_availability = fields.Date(copy=False, default=fields.Date.today() + relativedelta(months=3))
@@ -26,4 +26,12 @@ class RecurringPlan(models.Model):
         selection=[('north','North'),('east','East'),('south','South'),('west','West')],
         help="Orientation is the direction from Point A to Point B.However it is always one of the four sides of the Horizon"
     )
-    active = fields.Boolean('Active',readonly=True)
+    garden_orientation = fields.Selection(
+        string='Status',
+        selection=[("new","New"),("offer received","offer received"),('offer accepted','Offer Accepted'),('sold','Sold'),("canceled","Canceled")],
+        help="Status is the current situation of the Offer"
+        required=True,
+        copy=False,
+        default='new'
+    )
+    active = fields.Boolean(default=True)
