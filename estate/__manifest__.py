@@ -6,7 +6,8 @@
 
 
     'data':[
-        'security/security.xml'
-        'views/estate_property_views.xml'
+        'security/security.xml',
+        'security/ir.model.access.csv',
+        'views/estate_property_views.xml',
     ]
 }
