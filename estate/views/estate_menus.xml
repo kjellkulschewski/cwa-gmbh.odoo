@@ -1,11 +1,38 @@
 <odoo>
     <data>
 
-      <menuitem id="test_menu_root" name="Test">
-        <menuitem id="test_first_level_menu" name="First Level">
-          <menuitem id="test_model_menu_action" action="estate_property_action"/>
-        </menuitem>
-      </menuitem>
+      <!-- top menu -->
+
+      <menuitem id="menu_root" name="Real Estate"/>
+
+      <!-- first level menus -->
+
+      <menuitem
+          id="first_level_menu1"
+          name="Advertisements"
+          parent="menu_root"/>
+      <menuitem
+          id="first_level_menu2"
+          name="Settings"
+          parent="menu_root"/>
+
+      <!-- actions -->
+
+      <menuitem
+          id="menu_action1"
+          name="Properties"
+          parent="first_level_menu1"
+          action="estate_property_properties_action"/>
+      <menuitem
+          id="menu_action2"
+          name="Property Types"
+          parent="first_level_menu2"
+          action="estate_property_property_types_action"/>
+      <menuitem
+          id="menu_action3"
+          name="Property Tags"
+          parent="first_level_menu2"
+          action="estate_property_property_tags_action"/>
 
     </data>
 </odoo>
