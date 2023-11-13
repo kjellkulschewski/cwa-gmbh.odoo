@@ -29,7 +29,7 @@ class RecurringPlan(models.Model):
     garden_orientation = fields.Selection(
         string='Status',
         selection=[("new","New"),("offer received","offer received"),('offer accepted','Offer Accepted'),('sold','Sold'),("canceled","Canceled")],
-        help="Status is the current situation of the Offer"
+        help="Status is the current situation of the Offer",
         required=True,
         copy=False,
         default='new'
