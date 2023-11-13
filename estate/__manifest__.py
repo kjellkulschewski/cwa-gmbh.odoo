@@ -7,5 +7,6 @@
 
     'data':[
         'security/security.xml'
+        'views/estate_property_views.xml'
     ]
 }
