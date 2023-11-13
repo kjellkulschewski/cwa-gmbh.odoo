@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <menuitem id="estate_root" name="Real Estate">
-        <menuitem id="first level menu" name="first level">
-            <menuitem id="model_action_menu" name="model_action"/>
+    <menuitem id="test_menu_root" name="Test">
+        <menuitem id="test_first_level_menu" name="First Level" parent="test_menu_root">
+            <menuitem id="test_model_menu_action" action="test_model_action" parent="test_first_level_menu"/>
         </menuitem>
     </menuitem>
 </odoo>
