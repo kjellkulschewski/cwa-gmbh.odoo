@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields
+from odoo import models, fields, api
 from dateutil.relativedelta import relativedelta
 
 
@@ -25,6 +25,7 @@ class EstateProperty(models.Model):
     garage = fields.Boolean()
     garden = fields.Boolean()
     garden_area = fields.Integer()
+    total = fields.Integer(compute="_compute_total", store=True)
     garden_orientation = fields.Selection(
         string="Orientation",
         selection=[
@@ -51,3 +52,7 @@ class EstateProperty(models.Model):
     )
     active = fields.Boolean(default=True)
 
+    @api.depends("living_area", "garden_area")
+    def _compute_total(self):
+        for record in self:
+            record.total = int(record.living_area) + int(record.garden_area)
