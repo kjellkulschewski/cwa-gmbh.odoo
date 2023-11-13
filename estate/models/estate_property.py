@@ -5,7 +5,7 @@ from odoo import fields, models
 from dateutil.relativedelta import relativedelta
 
 class RecurringPlan(models.Model):
-    _name = "estate_property"
+    _name = "estate.property"
     _description = "this is a estate_property example"
     _order = "sequence"
 
