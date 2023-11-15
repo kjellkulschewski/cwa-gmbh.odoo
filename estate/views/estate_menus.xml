@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-    <menuitem id="menu_root" name="Real Estate"/>
-        <menuitem
-        id="test_first_level_menu"
-        name="First Level"
-        parent="menu_root"/>
-        <menuitem
-        id="test_estate_action"
-        action="estate_action"
-        parent="test_first_level_menu"/>
+        <menuitem id="test_menu_root" name="Test">
+            <menuitem id="test_first_level_menu" name="First Level">
+                <menuitem id="test_model_menu_action" action="estate_action"/>
+            </menuitem>
+        </menuitem>
     </data>
 </odoo>
