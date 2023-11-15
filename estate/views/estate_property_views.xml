@@ -68,7 +68,7 @@
     
     <!-- Seach soll dazu dienen die Suchleiste zu erstellen-->
     <record id="search_test" model="ir.ui.view">
-        <field name="name">Group Test</field>
+        <field name="name">Search Test</field>
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
                 <search>
@@ -78,10 +78,14 @@
                     <field name="bedrooms"/>
                     <field name="living_area"/>
                     <field name="facades"/>
+                    <filter string="Garden State" name="garden_state" domain="['|',('garden_state','=','offer received'),('garden_state','=','new')]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Postcode"
+                                name="postcode"
+                                context="{'group_by':'postcode'}"/>
+                    </group>
                 </search>
         </field>
 
     </record>
-
-          
 </odoo>
