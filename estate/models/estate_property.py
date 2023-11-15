@@ -26,7 +26,7 @@ class RecurringPlan(models.Model):
         selection=[('north','North'),('east','East'),('south','South'),('west','West')],
         help="Orientation is the direction from Point A to Point B.However it is always one of the four sides of the Horizon"
     )
-    garden_orientation = fields.Selection(
+    garden_state = fields.Selection(
         string='Status',
         selection=[("new","New"),("offer received","offer received"),('offer accepted','Offer Accepted'),('sold','Sold'),("canceled","Canceled")],
         help="Status is the current situation of the Offer",

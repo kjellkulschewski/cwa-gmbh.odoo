@@ -51,11 +51,11 @@
                            <group>
                            <field name="description" string="description"/>
                            <field name="bedrooms" string="bedrooms"/>
-                           <field name="living_area" string="Living Area"/>
+                           <field name="living_area" string="Living Area (sqm)"/>
                            <field name="facades" string="Facades"/>
                            <field name="garage" string="Garage"/>
                            <field name="garden" string="Garden"/>
-                           <field name="garden_area" string="Garden Area"/>
+                           <field name="garden_area" string="Garden Area (sqm)"/>
                            <field name="garden_orientation" string="Garden Orientation"/>
                         </group>
                        </page>
@@ -66,5 +66,22 @@
      </field>
     </record>
     
+    <!-- Seach soll dazu dienen die Suchleiste zu erstellen-->
+    <record id="search_test" model="ir.ui.view">
+        <field name="name">Group Test</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="postcode"/>
+                    <field name="expected_price"/>
+                    <field name="bedrooms"/>
+                    <field name="living_area"/>
+                    <field name="facades"/>
+                </search>
+        </field>
+
+    </record>
+
           
 </odoo>
