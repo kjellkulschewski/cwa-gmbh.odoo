@@ -11,7 +11,13 @@
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
             <tree string="Channel">
-                <field name="name" string="Test" width="100px"/>
+                <field name="name" string="Title" width="100px"/>
+                <field name="name" string="Postcode" width="100px"/>
+                <field name="name" string="Bedrooms" width="100px"/>
+                <field name="name" string="Living Area (sqm)" width="100px"/>
+                <field name="name" string="Expected Price" width="100px"/>
+                <field name="name" string="Selling Price" width="100px"/>
+                <field name="name" string="Available From" width="100px"/>
             </tree>
         </field>
     </record>
