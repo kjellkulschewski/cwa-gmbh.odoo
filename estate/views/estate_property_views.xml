@@ -32,7 +32,9 @@
                 <sheet>
                 <group>
                     <h1>
+                        <br>
                        <field name="name"/>
+                        </br>
                     </h1>
                     <group>
                        <field name="postcode"/>
