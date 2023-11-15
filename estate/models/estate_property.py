@@ -20,7 +20,7 @@ class RecurringPlan(models.Model):
     facades = fields.Integer()
     garage = fields.Boolean()
     garden = fields.Boolean()
-    garden_area = fields.Boolean()
+    garden_area = fields.Integer()
     garden_orientation = fields.Selection(
         string='Orientation',
         selection=[('north','North'),('east','East'),('south','South'),('west','West')],
@@ -34,4 +34,4 @@ class RecurringPlan(models.Model):
         copy=False,
         default='new'
     )
-    active = fields.Boolean(default=False)
+    active = fields.Boolean()
