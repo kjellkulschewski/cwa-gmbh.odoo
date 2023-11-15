@@ -48,6 +48,7 @@
                      </group>
                     <notebook>
                        <page string="Description">
+                           <group>
                            <field name="description" string="description"/>
                            <field name="bedrooms" string="bedrooms"/>
                            <field name="living_area" string="Living Area"/>
@@ -56,6 +57,7 @@
                            <field name="garden" string="Garden"/>
                            <field name="garden_area" string="Garden Area"/>
                            <field name="garden_orientation" string="Garden Orientation"/>
+                        </group>
                        </page>
                    </notebook>
                </group>
