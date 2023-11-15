@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!-- fuers Action Menu-->
     <record id="test_action" model="ir.actions.act_window">
         <field name="name">Test action</field>
         <field name="res_model">estate.property</field>
         <field name="view_mode">tree,form</field>
     </record>
-
+    <!-- Tree View ist dafuer da damit man die Spaltennamen der jeweiligen Felder bekommt-->
     <record id="estate_tree" model="ir.ui.view">
         <field name="name">estate.tree</field>
         <field name="model">estate.property</field>
@@ -21,26 +22,24 @@
             </tree>
         </field>
     </record>
-
-    <record id="estate_groups" model="ir.ui.view">
-        <field name="name">group Test</field>
-        <field namme="model">estate.property</field>
+    <!-- Group soll die die Gruppierungen darstellen und somit eine besser lesbare Oberflaeche bekommen-->
+    <record>
         <form>
-            <sheet>
-                <group>
-                    <h1>
-                        <field name="name"/>
-                    </h1>
-                    <group>
-                        <field name="last_seen"/>
-                    </group>
-                    <notebook>
-                        <page string="Description">
-                            <field name="description"/>
-                        </page>
-                    </notebook>
-                </group>
-            </sheet>
+           <sheet>
+               <group>
+                   <group>
+                       <field name="name"/>
+                   </group>
+                   <group>
+                       <fiel name="postcode"/>
+                   </group>
+                   <notebook>
+                       <page string="Description">
+                           <field name="description"/>
+                       </page>
+                   </notebook>
+               </group>
+           </sheet> 
         </form>
     </record>
 </odoo>
