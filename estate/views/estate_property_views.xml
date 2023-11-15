@@ -6,7 +6,7 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <record id="Estate_tree" model="ir.ui.view">
+    <record id="estate_tree" model="ir.ui.view">
         <field name="name">estate.tree</field>
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
@@ -19,6 +19,30 @@
                 <field name="selling_price" string="Selling Price" width="100px"/>
                 <field name="date_availability" string="Available From" width="100px"/>
             </tree>
+        </field>
+    </record>
+
+    <record id="estate_groups" model="ir.ui.view">
+        <field name="name">group Test</field>
+        <field namme="model">estate.property</field>
+        <field name="arch" type="xml">
+            <form string="Test">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="last_seen"/>
+                        </group>
+                        <notebook>
+                            <page string="Description">
+                                <field name="description"/>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
         </field>
     </record>
 </odoo>
