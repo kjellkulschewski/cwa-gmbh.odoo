@@ -8,6 +8,7 @@
 
     <menuitem 
         id="test_estate_action"
-        parent ="test_second_level_menu" 
-        action="estate_action"/>
+        name="secondLevel"
+        parent="test_second_level_menu" 
+        action="test_action"/>
 </odoo>
