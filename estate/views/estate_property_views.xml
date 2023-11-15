@@ -25,12 +25,12 @@
     <record id="estate_groups" model="ir.ui.view">
         <field name="name">group Test</field>
         <field namme="model">estate.property</field>
-        <form string="Test">
+        <form>
             <sheet>
                 <group>
-                    <group>
+                    <h1>
                         <field name="name"/>
-                    </group>
+                    </h1>
                     <group>
                         <field name="last_seen"/>
                     </group>
