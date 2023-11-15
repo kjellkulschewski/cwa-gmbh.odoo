@@ -1,13 +1,18 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-from odoo.exceptions import UserError
+from odoo.exceptions import UserError, ValidationError
+from odoo.tools.float_utils import float_compare, float_is_zero
 from dateutil.relativedelta import relativedelta
 
 
 class EstateProperty(models.Model):
     _name = "estate.property"
     _description = "This is the estate property."
+    _sql_constraints = [
+        ("check_expected_price", "CHECK(expected_price > 0.0)", "The expected price should be stricly positive."),
+        ("check_selling_price", "CHECK(selling_price >= 0.0)", "The selling price should be positive.")
+    ]
 
     name = fields.Char(required=True)
     property_type_id = fields.Many2one("estate.property.type", string="Property Type")
@@ -74,6 +79,15 @@ class EstateProperty(models.Model):
             self.garden_area = 0
             self.garden_orientation = False
 
+    # constraints
+    @api.constrains("expected price", "selling_price")
+    def _check_selling_price(self):
+        for record in self:
+            if float_compare(record.selling_price, record.expected_price * 0.9, precision_rounding=0.01) < 0:
+                raise ValidationError("The selling price must be at least 90% of the expected price!")
+
+
+
     # action buttons
     def action_cancel(self):
         for record in self:
@@ -90,5 +104,6 @@ class EstateProperty(models.Model):
             else:
                 record.state = "sold"
         return True
+
 
 
