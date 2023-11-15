@@ -22,18 +22,22 @@
             </tree>
         </field>
     </record>
+
     <!-- Group soll die die Gruppierungen darstellen und somit eine besser lesbare Oberflaeche bekommen-->
-    <record>
-        <form>
-           <sheet>
-               <group>
-                   <group>
+    <record id="group_estate" model="ir.ui.view">
+        <field name="name">Group Test</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                <group>
+                    <group>
                        <field name="name"/>
-                   </group>
-                   <group>
+                    </group>
+                    <group>
                        <fiel name="postcode"/>
-                   </group>
-                   <notebook>
+                    </group>
+                    <notebook>
                        <page string="Description">
                            <field name="description"/>
                        </page>
@@ -41,5 +45,8 @@
                </group>
            </sheet> 
         </form>
+     </field>
     </record>
+    
+          
 </odoo>
