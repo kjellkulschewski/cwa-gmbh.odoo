@@ -7,7 +7,7 @@
       <field name="name">PropertiesList</field>
       <field name="model">estate.property</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree decoration-success="state in ('offer_received', 'offer_accepted')" decoration-bf="state=='offer_accepted'" decoration-muted="state=='sold'">
           <field name="name" string="Title" width="100px"/>
           <field name="property_type_id" string="Property Type" width="100px"/>
           <field name="tag_ids" widget="many2many_tags" width="100px"/>
@@ -16,7 +16,8 @@
           <field name="living_area" string="Living Area (sqm)"/>
           <field name="expected_price"/>
           <field name="selling_price"/>
-          <field name="date_availability" string="Available From"/>
+          <field name="date_availability" string="Available From" optional="hide"/>
+          <field name="state" invisible="True"/>
         </tree>
       </field>
     </record>
@@ -29,8 +30,8 @@
       <field name="arch" type="xml">
         <form>
           <header>
-            <button name="action_sold" type="object" string="Sold" attrs="{'invisible': [('state', '=', 'sold')]}"/>
-            <button name="action_cancel" type="object" string="Cancel" attrs="{'invisible': [('state', '=', 'canceled')]}"/>
+            <button name="action_sold" type="object" string="Sold" attrs="{'invisible': ['|',('state', '=', 'sold'),('state', '=', 'canceled')]}"/>
+            <button name="action_cancel" type="object" string="Cancel" attrs="{'invisible': ['|',('state', '=', 'canceled'),('state', '=', 'sold')]}"/>
             <field name="state" widget="statusbar" statusbar_visible="new,offer_received,offer_accepted,sold"/>
           </header>
           <sheet>
@@ -58,13 +59,14 @@
                     <field name="facades"/>
                     <field name="garage"/>
                     <field name="garden"/>
-                    <field name="garden_area" string="Garden Area (sqm)"/>
-                    <field name="total_area" string="Total Area (sqm)"/>
+                    <field name="garden_area" string="Garden Area (sqm)" attrs="{'invisible': [('garden', '=', False)]}"/>
+                    <field name="total_area" string="Total Area (sqm)" attrs="{'invisible': [('garden', '=', False)]}"/>
                     <field name="garden_orientation"/>
+                    <field name="state"/>
                   </group>
                 </page>
                 <page string="Offers">
-                  <field name="offer_ids"/>
+                  <field name="offer_ids" attrs="{'readonly': [('state', 'in', ('offer_accepted', 'sold', 'canceled'))]}"/>
                 </page>
                 <page string="Other Info">
                   <group>
@@ -96,7 +98,7 @@
           <field name="facades"/>
           <filter string="Available"
                   name="available"
-                  domain="['|', ('state', '=', 'new'),('state', '=', 'offer_received')]"
+                  domain="['|',('state', '=', 'new'),('state', '=', 'offer_received')]"
                   help="Estate Properties with State 'New' or 'Offer Received'"/>
           <group expand="0" string="Group By">
             <filter string="Postcode"
@@ -113,6 +115,7 @@
       <field name="name">Properties</field>
       <field name="res_model">estate.property</field>
       <field name="view_mode">tree,form</field>
+      <field name="context">{'search_default_available': True}</field>
     </record>
 
   </data>
