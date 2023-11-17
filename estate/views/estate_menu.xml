@@ -6,13 +6,16 @@
     <menuitem 
         id="test_second_level_menu" 
         parent ="test_menu_root"
-        name="Advertisment"/>
+        name="TOP MENU"/>
 
-    <!-- 1st Level-->
     <menuitem 
         id="test_second_level_menu" 
         parent ="test_menu_root"
-        name="First Level"
-        action="ADS"/>/>
-        
+        name="Advertisement"/>
+    
+    <menuitem 
+        id="test_estate_action"
+        name="ADS"
+        parent="test_second_level_menu" 
+        action="test_action1"/>
 </odoo>
