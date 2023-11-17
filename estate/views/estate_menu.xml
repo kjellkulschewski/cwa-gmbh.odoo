@@ -24,7 +24,7 @@
     <menuitem 
         id="estate_action1"
         name="ADS"
-        parent="test_second_level_menu" 
+        parent="second_level_menu1" 
         action="test_action1"/>
     <menuitem 
         id="estate_action2"
