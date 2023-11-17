@@ -9,4 +9,5 @@ class RecurringPlan(models.Model):
     _description = "this is the estate property type Model class"
 
     name = fields.Char(required=True)
+    
 

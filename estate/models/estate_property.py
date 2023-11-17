@@ -36,5 +36,6 @@ class RecurringPlan(models.Model):
     )
     active = fields.Boolean()
     property_type_id = fields.Integer()
-    salesperson = fields.Many2one('res.users', string='Salesperson', default=lambda self: self.env.user)
-    buyer = fields.Many2one('res.partner', string='Buyer',copy=False)
+    salesperson_id = fields.Many2one('res.users', string='Salesperson', default=lambda self: self.env.user)
+    buyer_id = fields.Many2one('res.partner', string='Buyer',copy=False)
+    estate_property_id = fields.Many2one('res.user',string="Property Type")

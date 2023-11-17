@@ -6,20 +6,18 @@
     <menuitem 
         id="menu1" 
         parent ="root1"
-        name="TOP MENU"/>
+        name="Advertisement"/>
     <menuitem 
         id="menu2" 
         parent ="root1"
-        name="TOP MENU2"/>
+        name="Settings"/>
     <!-- 2nd Level-->
     <menuitem 
         id="second_level_menu1" 
-        parent ="menu1"
-        name="Advertisement"/>
+        parent ="menu1"/>
     <menuitem 
         id="second_level_menu2" 
-        parent ="menu2"
-        name="Settings"/>
+        parent ="menu2"/>
     <!-- 3rd Level-->
     <menuitem 
         id="estate_action1"
