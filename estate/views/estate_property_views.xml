@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- fuers Action Menu-->
-    <record id="test_action" model="ir.actions.act_window">
-        <field name="name">Test action</field>
+    <record id="test_action1" model="ir.actions.act_window">
+        <field name="name">Action1</field>
+        <field name="res_model">estate.property</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="test_action2" model="ir.actions.act_window">
+        <field name="name">Action2</field>
         <field name="res_model">estate.property</field>
         <field name="view_mode">tree,form</field>
     </record>

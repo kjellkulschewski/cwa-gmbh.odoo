@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <menuitem id="test_menu_root" name="Real Estate"/>
+
+    <!-- TOP MENU-->
     <menuitem 
         id="test_second_level_menu" 
         parent ="test_menu_root"
-        name="First Level"/>
+        name="Advertisment"/>
 
+    <!-- 1st Level-->
     <menuitem 
-        id="test_estate_action"
-        name="secondLevel"
-        parent="test_second_level_menu" 
-        action="test_action"/>
+        id="test_second_level_menu" 
+        parent ="test_menu_root"
+        name="First Level"
+        action="ADS"/>/>
+        
 </odoo>
